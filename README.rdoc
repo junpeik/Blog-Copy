@@ -7,28 +7,26 @@ Things you may want to cover:
 
 * Ruby version
   
-  ruby 2.0.0
+  ruby 2.2.0
 
 * Rails version
 
   Rails 4.2.0
   
-* System dependencies
+* 利用しているライブラリ
   
-  erb,scss,bootstrap
+  erb, scss, bootstrap
 
-* git clone
+* 初期構築コマンド
   
-  `$ git clone git@github.com:SonicGarden/blog-system.git`
+  $ git clone git@github.com:SonicGarden/blog-system.git
   
-  `$ cd blog-system`
+  $ cd blog-system
   
-  `$ bundle`
+  $ bundle
   
-  `$ bin/rake db:create`
+  $ bin/rake db:create
   
-  `$ bin/rake db:migrate`
+  $ bin/rake db:migrate
   
-  `$ bin/rails sever`
-
-* ...
+  $ bin/rails sever
