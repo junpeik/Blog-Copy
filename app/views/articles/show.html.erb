@@ -10,5 +10,22 @@
   <%= @article.content %>
 </p>
 
+<p>
+  <strong>Comment</strong>
+  <%= form_for [@article, @article.comments.build] do |f| %>
+  <%= f.text_area :body %><br>
+  <%= f.submit %>
+  <% end %>
+</p>
+
+<ul>
+  <p>コメント一覧</p>
+  <% @article.comments.each do |comment| %>
+    <li>
+      <%= comment.body %>
+    </li>
+  <% end %>
+</ul>
+
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
