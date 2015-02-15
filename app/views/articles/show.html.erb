@@ -1,31 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
+<p id="show-title">
+  <%= @article.title %><br>
 </p>
 
-<p>
-  <strong>Content:</strong>
+<p id="show-content">
   <%= @article.content %>
 </p>
 
-<p>
-  <strong>Comment</strong>
-  <%= form_for [@article, @article.comments.build] do |f| %>
-  <%= f.text_area :body %><br>
-  <%= f.submit %>
-  <% end %>
+<p class="created-time">
+  <%= @article.created_at %>
 </p>
 
+<p id="show-write-comment">コメントを書く</p>
+<%= form_for [@article, @article.comments.build] do |f| %>
+<%= f.text_area :body, cols: 35, rows: 5 %><br>
+<%= f.submit "投稿", id: "show-submit" %>
+<% end %>
+
+<p id="show-comment-index">コメント一覧</p>
 <ul>
-  <p>コメント一覧</p>
   <% @article.comments.each do |comment| %>
     <li>
       <%= comment.body %>
+
+      <% if false %>
+	  <%= link_to '[Delete]', article_comment_path(comment.article_id, comment.id), method: :delete, data: { confirm: "Are you sure?" } %>
+	  <% end %>
+
     </li>
   <% end %>
 </ul>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<div class="links">
+<%= link_to 'Home', articles_path %> |
+<%= link_to '編集', edit_article_path(@article) %> |
+<%= link_to '削除', article_path(@article), method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>

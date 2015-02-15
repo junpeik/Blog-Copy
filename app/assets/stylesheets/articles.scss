@@ -1,3 +1,55 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.created-time {
+  font-size: 12px;
+  color: #bbbbbb;
+}
+
+// indexアクション
+#index-title {
+  text-align: center;
+}
+
+#index-ul {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+#index-li {
+  margin: 30px 0;
+}
+
+// showアクション
+#show-title {
+  margin: 30px 0;
+  font-size: 36px;
+}
+
+#show-content {
+  font-size: 24px;
+}
+
+#show-write-comment {
+  margin-top: 80px;
+}
+
+#show-comment-index {
+  margin-top: 50px;
+}
+
+#show-submit {
+  margin: 5px 0 5px 220px;
+}
+
+.links {
+  margin: 35px 0;
+  text-align: center;
+}
+
+// newアクション
+#new-title {
+  text-align: center;
+  margin-bottom: 30px;
+}

@@ -1,29 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1>記事一覧</h1>
+<div id="index-title">
+  <h2>記事一覧</h2>
+  <i class="fa fa-pencil-square-o"></i>
+  <%= link_to '新規記事作成', new_article_path %>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>タイトル</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td>
-          <%= link_to article.title, article %>
-        </td>
-        <td><%= link_to '編集', edit_article_path(article) %></td>
-        <td><%= link_to '削除', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<i class="fa fa-pencil-square-o"></i>
-<%= link_to '新規記事作成', new_article_path %>
+<ul id="index-ul">
+  <% @articles.each do |article| %>
+    <li id="index-li">
+      <%= link_to article.title, article %><br>
+      <span class="created-time">
+        <%= article.created_at %>
+      </span>
+    </li>
+  <% end %>
+</ul>
