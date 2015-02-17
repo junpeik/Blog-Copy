@@ -4,8 +4,7 @@ class CreateComments < ActiveRecord::Migration
       t.string :body
       t.references :article, index: true
 
-      t.timestamps null: false
+      t.timestamps
     end
-    add_foreign_key :comments, :articles
   end
 end
