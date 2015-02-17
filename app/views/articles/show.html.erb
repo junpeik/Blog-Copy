@@ -25,9 +25,9 @@
       <%= comment.body %>
 
       <% if false %>
-	    <%= link_to '[Delete]', article_comment_path(comment.article_id, comment.id), method: :delete, data: { confirm: "Are you sure?" } %>
+	  <%= link_to '[Delete]', article_comment_path(comment.article_id, comment.id), method: :delete, data: { confirm: "Are you sure?" } %>
       <% end %>
-      
+
     </li>
   <% end %>
 </ul>
